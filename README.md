@@ -16,7 +16,7 @@ Link: https://harish-azka-tokofootball.pbp.cs.ui.ac.id/
    ```bash
    django-admin startproject toko_football
    ```
-6. Setelah project jadi, saya membuat aplikasi `main` dan mulai mengerjakan bagian logic-nya step by step: mulai dari `urls.py`, lanjut ke `views.py`, lalu `models.py`, dan terakhir membuat tampilan di `templates/main.html`.
+6. Setelah project jadi, saya membuat aplikasi `main` dan mulai mengerjakan bagian logic-nya step by step mulai dari `urls.py`, lanjut ke `views.py`, lalu `models.py`, dan terakhir membuat tampilan di `templates/main.html`.
 7. Karena ada perubahan di `models.py`, saya menjalankan migrasi dengan:
 
    ```bash
