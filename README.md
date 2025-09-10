@@ -11,7 +11,7 @@ Link: https://harish-azka-tokofootball.pbp.cs.ui.ac.id/
    ```bash
    pip install -r requirements.txt
    ```
-5. Saya lanjut bikin project Django baru dengan nama `toko_football` pakai perintah:
+5. Saya lanjut bikin project Django baru dengan nama `toko_football` menggunakan perintah:
 
    ```bash
    django-admin startproject toko_football
