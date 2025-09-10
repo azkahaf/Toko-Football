@@ -31,7 +31,7 @@ PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "<URL deployment PWS kamu>"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://harish-azka-tokofootball.pbp.cs.ui.ac.id/"]
 
 
 # Application definition
