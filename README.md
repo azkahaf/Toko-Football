@@ -36,7 +36,7 @@ Link: https://harish-azka-tokofootball.pbp.cs.ui.ac.id/
 ### 2. Alur Django
 saya izin untuk mengambil gambar bagan ini dari Forum Diskusi Minggu Kedua - Course PBP SCELE (Discussion "Alur Django") oleh Bu Ara
 
-**Penjelasan:**
+<img width="725" height="525" alt="AlurKerjaDjango" src="https://github.com/user-attachments/assets/4cf79a4c-78f8-4369-b9a8-e22eb307463c" />
 
 1. HTTP Request akan diterima oleh urls.py untuk di cocokkan alamat HTTP dengan path yang telah didefinisikan di sana. Jika sesuai atau cocok, maka path akan diteruskan ke appropriate view pada views.py
 
