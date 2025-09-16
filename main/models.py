@@ -17,6 +17,8 @@ class Product(models.Model):
     thumbnail = models.URLField(blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='update')
     is_featured = models.BooleanField(default=False)
+    product_views = models.PositiveIntegerField(default=0)
+    product_id  = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     
     def __str__(self):
         return self.title
@@ -28,4 +30,8 @@ class Product(models.Model):
     def decrement_price(self):
         self.price -= 10
         self.save() 
+
+    def increment_views(self):
+        self.product_views += 1
+        self.save()
         
