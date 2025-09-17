@@ -1,5 +1,8 @@
 Link: https://harish-azka-tokofootball.pbp.cs.ui.ac.id/
 
+<details>
+<Summary><b>Tugas 2</b></Summary>
+
 ---
 ### 1. Step by Step Implementasi Tugas 2 (Versi Saya)
 
@@ -72,4 +75,72 @@ Sudah sangat mudah dipahami step by step nya, tetapi mungkin akan lebih paham ji
 
 ---
 
+</details>
 
+<details>
+<Summary><b>Tugas 3</b></Summary>
+
+# Tugas 3: Implementasi Form dan Data Delivery pada Django
+
+---
+
+## 1. Mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+
+Data delivery penting karena sebuah platform tidak pernah berdiri sendiri. Sebuah platform biasanya akan berhubungan dengan platform atau sistem lain, baik untuk bertukar informasi, mengambil data, maupun mengirimkan data. Tanpa adanya mekanisme data delivery, platform akan terisolasi dan tidak bisa berkomunikasi dengan ekosistem di sekitarnya. Dengan data delivery, proses integrasi antar-platform menjadi mungkin, sehingga layanan dapat saling melengkapi dan memberi pengalaman yang lebih kaya untuk pengguna.  
+
+---
+## 2. Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?  
+Secara umum, JSON lebih praktis dibanding XML pada kebanyakan kebutuhan saat ini.
+
+- JSON: ringkas, mudah dibaca manusia, cepat diproses mesin, serta secara alami cocok dengan JavaScript dan bahasa modern lainnya.
+
+- XML: lebih kaya fitur (mendukung schema, namespace, validasi), tapi justru membuat strukturnya lebih rumit dan verbose.
+
+Karena faktor kesederhanaan, performa, dan efisiensi, JSON menjadi standar de facto untuk komunikasi data terutama di API modern.
+
+---
+## 3. Jelaskan fungsi dari method `is_valid()` pada form Django dan mengapa kita membutuhkan method tersebut?  
+Method `is_valid()` dipakai untuk memeriksa apakah data yang dikirimkan melalui form sesuai aturan yang sudah didefinisikan. Jika data memenuhi kriteria, maka menghasilkan True sehingga proses selanjutnya bisa dijalankan. Jika tidak, maka akan menghasilkan False dan Django otomatis menyediakan pesan error yang bisa ditampilkan ke pengguna. Validasi ini krusial agar hanya data yang benar dan sesuai format yang masuk ke database, sekaligus mencegah error maupun input yang berpotensi berbahaya.
+
+---
+## 4. Mengapa kita membutuhkan `csrf_token` saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan `csrf_token` pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?  
+`csrf_token` adalah mekanisme keamanan untuk melindungi aplikasi dari serangan Cross-Site Request Forgery (CSRF). Tanpa token ini, seorang penyerang bisa membuat pengguna secara tidak sadar mengirimkan request berbahaya (misalnya mengganti password atau menghapus data) karena server tidak bisa membedakan mana request asli dan mana yang palsu. Dengan csrf_token, setiap form disertai kode unik yang harus cocok dengan yang ada di server. Jika token salah atau hilang, request otomatis ditolak.
+
+---
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step  
+Berikut step by step pengerjaan tugas yang saya lakukan:  
+
+1. Menambahkan empat fungsi view di views.py, termasuk untuk daftar produk, tambah produk, dan detail produk.
+2. Menghubungkan view dengan URL pattern baru lewat urls.py.
+3. Membuat fungsi add_product, show_product, serta menyesuaikan main_page agar menampilkan list produk dan tombol tambah produk.
+4. Mengedit index.html supaya mendukung fitur baru, seperti menampilkan daftar produk.
+5. Menyediakan halaman baru di folder templates, yaitu add_product.html dan product_details.html.
+6. Membuat forms.py berisi ProductForm dengan field sesuai kebutuhan input produk.
+7. Menambahkan atribut id pada model Product untuk memberi identitas unik tiap produk.
+8. Menambahkan CSRF trusted domains di settings.py agar form dapat berjalan aman ketika diakses via domain tertentu.
+  
+---
+## 6. Apakah ada feedback untuk asdos di tutorial 2?  
+Sudah cukup jelas smua penjelasan tutorialnya.
+
+---
+## Screenshot Postman:
+1. XML
+
+
+
+3. JSON
+
+
+
+4. XML By ID
+
+
+
+6. JSON By ID
+
+
+
+---
+
+</details>
