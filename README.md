@@ -127,18 +127,22 @@ Sudah cukup jelas smua penjelasan tutorialnya.
 ## Screenshot Postman:
 1. XML
 
+<img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/dced570f-89e9-4f28-b769-bd7ae069906c" />
 
 
 3. JSON
 
+<img width="1920" height="1080" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/9c1fd269-d023-4291-a413-562396cb4e46" />
 
 
 4. XML By ID
 
+<img width="1920" height="1080" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/4ac939d8-b546-4b6a-a9b6-6f81d97e25e8" />
 
 
 6. JSON By ID
 
+<img width="1920" height="1080" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/2009412f-b181-477f-b74e-803097c31460" />
 
 
 ---
