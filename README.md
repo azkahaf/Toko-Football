@@ -148,3 +148,91 @@ Sudah cukup jelas smua penjelasan tutorialnya.
 ---
 
 </details>
+
+<details>
+<Summary><b>Tugas 4</b></Summary>
+
+# Tugas 4: Implementasi Autentikasi, Session, dan Cookies pada Django
+
+---
+
+## 1. Apa itu Django AuthenticationForm? Jelaskan juga kelebihan dan kekurangannya.
+`AuthenticationForm` adalah form bawaan Django yang digunakan untuk menangani proses login pengguna. Form ini secara otomatis memvalidasi username dan password berdasarkan model User yang terdaftar.
+
+**Kelebihan:**
+- Sudah terintegrasi penuh dengan sistem autentikasi bawaan Django sehingga lebih terjamin keamanannya.
+- Lebih cepat dan simple, karena tidak diperlukan untuk membuat form manual.
+
+**Kekurangan:**
+- Terbatas pada field standar yaitu username dan password, sehingga jika ingin menambahkan custom field seperti SSO, perlu dilakukan override.
+
+---
+
+## 2. Apa perbedaan antara autentikasi dan otorisasi? Bagaimana Django mengimplementasikan kedua konsep tersebut?
+- **Autentikasi** adalah proses memverifikasi identitas pengguna, biasanya dengan username/email dan password.
+
+- Sedangkan **Otorisasi** adalah proses menentukan hak akses apa yang dimiliki oleh pengguna yang sudah terautentikasi.
+
+**Implementasi di Django:**
+- Autentikasi ditangani dengan sistem `django.contrib.auth`, termasuk User model, AuthenticationForm, dan fungsi untuk masuk (log in) dan keluar (logout).
+- Otorisasi ditangani dengan permission (add, change, delete, view) yang terasosiasi dengan model dan diatur oleh decorator `@login_required` dan `@permission_required` untuk membatasi akses pada view.
+
+---
+
+## 3. Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web?
+
+**Session:**
+
+   Kelebihan:
+   - Data disimpan di server, hanya session ID yang tersimpan di browser sehingga lebih aman.
+   - Oleh karena itu maka bisa menyimpan data yang lebih kompleks.
+
+   Kekurangan:
+   - Sangat membebani server karena harus menyimpan data banyak user.
+
+**Cookies:**
+
+   Kelebihan:
+   - Disimpan di client, sehingga tidak membebani server.
+
+   Kekurangan:
+   - Rentan terhadap serangan XSS/CSRF jika tidak diamankan.
+   - Ukurannya terbatas (karena disimpan di client).
+   - Data sensitif tidak boleh disimpan langsung dalam cookie karena rentan.
+
+---
+
+## 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?
+**Penggunaan cookies tidak sepenuhnya aman secara default karena:**
+- Bisa diakses lewat JavaScript (rentan XSS).
+- Bisa dicuri melalui koneksi yang tidak terenkripsi (Man-in-the-Middle attack).
+- Bisa dipalsukan oleh pengguna.
+
+**Django menangani risiko ini dengan:**
+- Menggunakan HttpOnly flag (mencegah akses cookie via JavaScript).
+- Menggunakan Secure flag (cookie hanya dikirim melalui HTTPS).
+- CSRF protection otomatis melalui middleware.
+- Session cookie Django secara default disimpan dengan nama yang acak dan terenkripsi (menggunakan SECRET_KEY).
+
+---
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+
+1. Membuat fungsi **login** dan **register** pada `views.py`.
+2. Menambahkan routing untuk `login`, `register`, dan `logout` di `urls.py`.
+3. Membuat template HTML khusus untuk halaman login dan register.
+4. Mengimplementasikan fungsi **logout** serta menambahkan tombol logout pada `main.html`.
+5. Mendaftarkan path `logout` ke dalam `urls.py`.
+6. Menggunakan decorator `@login_required` untuk membatasi akses ke halaman utama dan fitur **show product**.
+7. Mengelola cookies: menyimpan saat login, menghapus saat logout, serta menampilkan informasi **last login** di halaman utama.
+8. Menghubungkan entitas `Product` dengan `User` agar setiap produk memiliki informasi siapa yang menambahkannya.
+9. Menjalankan migrasi setelah melakukan perubahan pada `models.py`.
+10. Menyesuaikan fungsi **add\_product** agar produk baru secara otomatis terkait dengan user yang membuatnya.
+11. Memodifikasi halaman utama untuk menambahkan fitur **filtering** produk.
+12. Menyesuaikan halaman detail produk agar menampilkan informasi user yang menambahkan produk tersebut.
+13. Melakukan proses **add-commit-push** ke GitHub dan juga ke PWS.
+
+
+---
+
+</details>
