@@ -236,3 +236,161 @@ Sudah cukup jelas smua penjelasan tutorialnya.
 ---
 
 </details>
+
+<details>
+<Summary><b>Tugas 4</b></Summary>
+
+## 1. Urutan Prioritas CSS Selector
+Jika sebuah elemen HTML memiliki beberapa style dari selector CSS yang berbeda, browser akan menentukan style mana yang akan diterapkan berdasarkan urutan prioritas atau yang biasa disebut spesifisitas (specificity). Berikut adalah urutannya dari prioritas tertinggi ke terendah:
+
+1. !important Rule: Aturan CSS yang diakhiri dengan !important akan mengalahkan semua aturan lainnya. Namun, penggunaannya sangat tidak disarankan kecuali dalam keadaan terpaksa karena dapat membuat CSS sulit dikelola.
+
+Contoh: color: blue !important;
+
+2. Inline Style: CSS yang ditulis langsung pada atribut style di dalam tag HTML.
+
+Contoh: <div style="color: red;"></div>
+
+3. ID Selector: CSS yang menargetkan elemen berdasarkan id uniknya.
+
+Contoh: #header { color: green; }
+
+4. Class, Attribute, dan Pseudo-class Selectors: Prioritas di level ini setara.
+
+Class: .button { color: purple; }
+
+Attribute: input[type="text"] { border: 1px solid gray; }
+
+Pseudo-class: a:hover { text-decoration: underline; }
+
+5. Element dan Pseudo-element Selectors: Menargetkan semua elemen dari jenis tag tertentu. Ini adalah prioritas terendah.
+
+Element: div { font-size: 16px; }
+
+Pseudo-element: p::first-line { font-weight: bold; }
+
+Jika terdapat dua selector dengan prioritas yang sama, maka aturan yang didefinisikan paling akhir di dalam file CSS akan menjadi pemenangnya.
+
+## 2. Pentingnya Responsive Design
+Responsive design adalah konsep penting karena bertujuan untuk membuat halaman web terlihat dan berfungsi dengan baik di berbagai macam perangkat dengan ukuran layar yang berbeda, mulai dari desktop, laptop, tablet, hingga smartphone.
+
+Mengapa ini penting?
+
+1. Pengalaman Pengguna (User Experience): Situs yang responsif memberikan pengalaman yang nyaman bagi pengguna di perangkat apa pun. Pengguna tidak perlu melakukan zoom-in/zoom-out atau scroll ke samping untuk membaca konten.
+
+2. Peningkatan Jangkauan Pengguna: Sebagian besar pengguna internet saat ini mengakses web melalui perangkat mobile. Tanpa desain yang responsif, Anda akan kehilangan audiens yang sangat besar.
+
+3. SEO (Search Engine Optimization): Mesin pencari seperti Google memprioritaskan situs yang mobile-friendly dalam hasil pencariannya. Situs yang tidak responsif akan mendapatkan peringkat yang lebih rendah.
+
+4. Efisiensi Perawatan: Anda hanya perlu mengelola satu basis kode (codebase) untuk semua perangkat, bukan membuat versi terpisah untuk desktop dan mobile.
+
+Tentu, berikut adalah jawaban untuk soal-soal tersebut:
+
+1. Urutan Prioritas CSS Selector
+Jika sebuah elemen HTML memiliki beberapa style dari selector CSS yang berbeda, browser akan menentukan style mana yang akan diterapkan berdasarkan urutan prioritas atau yang biasa disebut spesifisitas (specificity). Berikut adalah urutannya dari prioritas tertinggi ke terendah:
+
+!important Rule: Aturan CSS yang diakhiri dengan !important akan mengalahkan semua aturan lainnya. Namun, penggunaannya sangat tidak disarankan kecuali dalam keadaan terpaksa karena dapat membuat CSS sulit dikelola.
+
+Contoh: color: blue !important;
+
+Inline Style: CSS yang ditulis langsung pada atribut style di dalam tag HTML.
+
+Contoh: <div style="color: red;"></div>
+
+ID Selector: CSS yang menargetkan elemen berdasarkan id uniknya.
+
+Contoh: #header { color: green; }
+
+Class, Attribute, dan Pseudo-class Selectors: Prioritas di level ini setara.
+
+Class: .button { color: purple; }
+
+Attribute: input[type="text"] { border: 1px solid gray; }
+
+Pseudo-class: a:hover { text-decoration: underline; }
+
+Element dan Pseudo-element Selectors: Menargetkan semua elemen dari jenis tag tertentu. Ini adalah prioritas terendah.
+
+Element: div { font-size: 16px; }
+
+Pseudo-element: p::first-line { font-weight: bold; }
+
+Jika terdapat dua selector dengan prioritas yang sama, maka aturan yang didefinisikan paling akhir di dalam file CSS akan menjadi pemenangnya.
+
+2. Pentingnya Responsive Design
+Responsive design adalah konsep penting karena bertujuan untuk membuat halaman web terlihat dan berfungsi dengan baik di berbagai macam perangkat dengan ukuran layar yang berbeda, mulai dari desktop, laptop, tablet, hingga smartphone.
+
+Mengapa ini penting?
+
+Pengalaman Pengguna (User Experience): Situs yang responsif memberikan pengalaman yang nyaman bagi pengguna di perangkat apa pun. Pengguna tidak perlu melakukan zoom-in/zoom-out atau scroll ke samping untuk membaca konten.
+
+Peningkatan Jangkauan Pengguna: Sebagian besar pengguna internet saat ini mengakses web melalui perangkat mobile. Tanpa desain yang responsif, Anda akan kehilangan audiens yang sangat besar.
+
+SEO (Search Engine Optimization): Mesin pencari seperti Google memprioritaskan situs yang mobile-friendly dalam hasil pencariannya. Situs yang tidak responsif akan mendapatkan peringkat yang lebih rendah.
+
+Efisiensi Perawatan: Anda hanya perlu mengelola satu basis kode (codebase) untuk semua perangkat, bukan membuat versi terpisah untuk desktop dan mobile.
+
+Contoh Aplikasi:
+
+   - Sudah Menerapkan (Responsif): YouTube.
+
+      - Alasan: Jika Anda membuka YouTube di desktop, Anda akan melihat video utama dengan daftar video rekomendasi di sampingnya dalam beberapa kolom. Namun, saat dibuka di smartphone, tata letaknya berubah menjadi satu kolom vertikal, dengan komentar dan rekomendasi di bawah video. Ini membuat navigasi dan menonton menjadi mudah di layar kecil.
+
+   - Belum Menerapkan (Tidak Responsif): Situs web akademik atau pemerintah yang sudah tua.
+
+      - Alasan: Seringkali situs-situs lama ini dibuat hanya untuk tampilan desktop. Saat dibuka di smartphone, seluruh halaman akan "menyusut" agar muat di layar. Akibatnya, teks menjadi sangat kecil dan tidak terbaca, dan tombol atau link menjadi sulit untuk ditekan. Pengguna dipaksa untuk terus-menerus memperbesar dan menggeser layar, memberikan pengalaman yang sangat buruk.
+
+## 3. Perbedaan Margin, Border, dan Padding
+Ketiganya adalah komponen dari CSS Box Model, yang merupakan kotak yang membungkus setiap elemen HTML.
+
+1. Padding (Bantalan):
+Definisi: Ruang transparan yang berada di dalam border, yaitu antara border dan konten elemen (teks/gambar). Fungsinya adalah memberikan ruang bernapas untuk konten di dalam kotaknya.
+
+Implementasi: padding: 20px; atau padding-top: 10px;
+
+2. Border (Garis Tepi):
+Definisi: Garis yang mengelilingi padding dan konten. Border bisa memiliki ketebalan, gaya (misalnya solid, dotted), dan warna.
+
+Implementasi: border: 2px solid black;
+
+3. Margin (Jarak):
+Definisi: Ruang transparan yang berada di luar border. Fungsinya adalah untuk menciptakan jarak antara elemen tersebut dengan elemen lainnya di sekitarnya.
+
+Implementasi: margin: 15px; atau margin-bottom: 25px;
+
+## 4. Konsep dan Kegunaan Flexbox dan Grid Layout
+Keduanya adalah sistem layout modern di CSS untuk mengatur posisi dan tata letak elemen, namun dengan tujuan yang berbeda.
+
+1. Flexbox (Flexible Box Layout)
+
+   - Konsep: Sistem layout satu dimensi. Artinya, Flexbox dirancang untuk mengatur elemen-elemen dalam satu baris (row) atau satu kolom (column). Ia sangat "fleksibel" dalam mendistribusikan ruang dan meratakan item di dalam sebuah kontainer.
+   - Kegunaan:
+      - Sangat ideal untuk komponen aplikasi skala kecil, seperti membuat navbar, meratakan item di dalam sebuah tombol atau kartu.
+      - Memusatkan elemen secara vertikal dan horizontal dengan mudah.
+      - Mendistribusikan ruang secara merata di antara beberapa item.
+
+2. Grid Layout
+
+   - Konsep: Sistem layout dua dimensi. Grid memungkinkan kita mengatur    tata letak dalam bentuk baris dan kolom secara bersamaan, seperti sebuah tabel atau spreadsheet. Kita bisa mendefinisikan sebuah "kisi-kisi" dan menempatkan elemen secara presisi di dalamnya.
+
+   - Kegunaan:
+      - Sangat cocok untuk tata letak halaman secara keseluruhan (contoh: header, sidebar, konten utama, footer).
+      - Membuat layout yang kompleks dan asimetris, seperti galeri foto atau dashboard aplikasi.
+      - Mengatur elemen yang perlu sejajar baik secara horizontal maupun vertikal.
+
+---
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+
+1. Saya memulai dengan membuat fungsi untuk mengedit dan menghapus produk dari etalase.
+2. Tak lupa saya juga menampilkan fitur edit dan delete pada cardproduct.
+3. Membuat beberapa tampilan html untuk membuat tampilan yang bisa dikostumisasi menggunakan Tailwind.
+4. Sebetulnya saya pertama-tama menerapkan semua yang diberikan di tutorial, tetapi saya mengubah beberapa hal.
+5. Menambah animasi ketika cursor digerakkan ke arah card.
+6. Mengubah seluruh tampilan warna website menjadi darkmode dan menggunakan warna spotlight berupa warna biru.
+7. Menambah harga barang pada card.
+8. Menambahkan kondisi ketika tidak ada thumbnail maka akan menampilkan no-thumbnail image, begitupun krtika tidak ada produk.
+9. Menambahkan navbar untuk keperluan navigasi web dan untuk merapikan susunan web.
+
+
+</details>

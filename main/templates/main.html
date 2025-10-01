@@ -2,46 +2,46 @@
 {% load static %}
 
 {% block meta %}
-<title>Football Product</title>
+<title>Football Shop</title>
 {% endblock meta %}
 
 {% block content %}
 {% include 'navbar.html' %}
-<div class="bg-gray-50 w-full pt-16 min-h-screen">
+<div class="bg-gray-900 w-full pt-20 min-h-screen">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-    <!-- Header Section -->
+    <!-- Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900 mb-2">Latest Football Product</h1>
-      <p class="text-gray-600">Stay updated with the latest football stories and analysis</p>
+      <h1 class="text-4xl font-bold text-white mb-2">Trending Football Product</h1>
+      <p class="text-gray-400">Stay updated with the best football product</p>
     </div>
 
-    <!-- Filter Section -->
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 bg-white rounded-lg border border-gray-200 p-4">
+    <!-- Filter -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 bg-gray-800 rounded-xl border border-gray-700 p-4 shadow-md">
       <div class="flex space-x-3 mb-4 sm:mb-0">
-        <a href="?" class="{% if request.GET.filter == 'all' or not request.GET.filter  %} bg-green-600 text-white{% else %}bg-white text-gray-700 border border-gray-300{% endif %} px-4 py-2 rounded-md font-medium transition-colors hover:bg-green-600 hover:text-white">
+        <a href="?" class="{% if request.GET.filter == 'all' or not request.GET.filter  %} bg-blue-600 text-white{% else %}bg-gray-700 text-gray-300 border border-gray-600{% endif %} px-4 py-2 rounded-md font-medium transition-colors hover:bg-blue-600 hover:text-white">
           All Product
         </a>
-        <a href="?filter=my" class="{% if request.GET.filter == 'my' %} bg-green-600 text-white{% else %}bg-white text-gray-700 border border-gray-300{% endif %} px-4 py-2 rounded-md font-medium transition-colors hover:bg-green-600 hover:text-white">
+        <a href="?filter=my" class="{% if request.GET.filter == 'my' %} bg-blue-600 text-white{% else %}bg-gray-700 text-gray-300 border border-gray-600{% endif %} px-4 py-2 rounded-md font-medium transition-colors hover:bg-blue-600 hover:text-white">
           My Product
         </a>
       </div>
       {% if user.is_authenticated %}
-        <div class="text-sm text-gray-500">
+        <div class="text-sm text-gray-400">
           Last login: {{ last_login }}
         </div>
       {% endif %}
     </div>
 
-    <!-- Product Grid -->
+    <!-- Product List -->
     {% if not product_list %}
-      <div class="bg-white rounded-lg border border-gray-200 p-12 text-center">
+      <div class="bg-gray-800 rounded-xl border border-gray-700 p-12 text-center shadow-md">
         <div class="w-32 h-32 mx-auto mb-4">
-          <img src="{% static 'image/no-product.png' %}" alt="No product available" class="w-full h-full object-contain">
+          <img src="{% static 'image/no-product.png' %}" alt="No product available" class="w-full h-full object-contain opacity-70">
         </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">No product found</h3>
-        <p class="text-gray-500 mb-6">Be the first to share football product with the community.</p>
-        <a href="{% url 'main:create_product' %}" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">
+        <h3 class="text-lg font-medium text-white mb-2">No product found</h3>
+        <p class="text-gray-400 mb-6">Be the first to share football product with the community.</p>
+        <a href="{% url 'main:create_product' %}" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
           Create Product
         </a>
       </div>
