@@ -394,3 +394,73 @@ Keduanya adalah sistem layout modern di CSS untuk mengatur posisi dan tata letak
 
 
 </details>
+
+
+<details>
+<Summary><b>Tugas 6</b></Summary>
+# Tugas 6: Javascript dan AJAX
+
+---
+
+## Apa perbedaan antara synchronous request dan asynchronous request?
+
+Secara sederhana, synchronous request memaksa browser berhenti dan menunggu server memberikan respons sebelum melakukan hal lain. Inilah yang menyebabkan halaman reload setiap kali ada aksi.
+
+Sebaliknya, asynchronous request (AJAX) memungkinkan browser berkomunikasi dengan server di latar belakang. Pengguna bisa terus berinteraksi dengan halaman sementara data diproses, sehingga website terasa lebih cepat dan dinamis tanpa perlu reload.
+
+---
+
+## Bagaimana AJAX bekerja di Django (alur request–response)?
+
+Prosesnya dimulai saat pengguna memicu sebuah event, seperti menekan tombol "Add Product".
+
+1. Aksi Pengguna: JavaScript mengambil alih aksi default dari form.
+2. Kirim Request: Fungsi fetch() mengirimkan data form ke endpoint khusus di Django (contoh: /create-product-ajax/).
+3. Proses di Server: View Django yang sesuai menerima data, memvalidasinya, dan menyimpannya ke database.
+4. Terima Respons: View mengembalikan JsonResponse yang berisi status (sukses/gagal) dan data yang relevan.
+5. Update Tampilan: JavaScript menerima respons ini dan langsung memperbarui halaman—seperti menambahkan produk baru ke daftar—tanpa reload.
+
+Dengan alur ini, interaksi terasa instan dan efisien.
+
+---
+
+## Apa keuntungan menggunakan AJAX dibandingkan render biasa di Django?
+
+Implementasi AJAX memberikan beberapa keuntungan signifikan:
+
+- Pengalaman Pengguna (UX) Superior: Tidak ada lagi jeda reload halaman yang mengganggu. Setiap aksi terasa instan, membuat aplikasi lebih responsif dan modern, mirip seperti aplikasi mobile.
+
+- Efisiensi Bandwidth: Hanya data yang benar-benar dibutuhkan yang dikirim antara browser dan server, bukan seluruh halaman HTML. Ini membuat aplikasi lebih cepat dan hemat sumber daya.
+
+- Interaktivitas Tinggi: Pengguna mendapatkan feedback langsung. Contohnya, saat produk berhasil ditambahkan, notifikasi toast akan muncul dan daftar produk langsung diperbarui di depan mata mereka.
+
+---
+
+## Bagaimana cara memastikan keamanan saat menggunakan AJAX untuk fitur Login dan Register di Django?
+
+Semua prinsip keamanan standar Django tetap diterapkan:
+
+Proteksi CSRF Tetap Aktif: Setiap request POST yang dikirim melalui fetch() wajib menyertakan X-CSRFToken di dalam header, sehingga hanya request dari situs kita yang diterima.
+
+Validasi Utama di Backend: Logika validasi username, password, dan data lainnya tetap ditangani sepenuhnya oleh Django Forms (AuthenticationForm & UserCreationForm) di sisi server.
+
+Endpoint Terproteksi: View yang menangani aksi sensitif (seperti menambah atau menghapus produk) dilindungi dengan decorator @login_required agar tidak bisa diakses oleh pengguna yang belum login.
+
+Pesan Error Aman: Jika terjadi kesalahan, server hanya mengirimkan pesan umum ke pengguna tanpa membocorkan detail teknis internal.
+
+Dengan kata lain, AJAX hanya mengubah cara data dikirim, bukan cara data diamankan.
+
+
+
+---
+
+## Bagaimana AJAX mempengaruhi pengalaman pengguna (User Experience) pada website?
+
+Dampaknya sangat positif dan transformatif. Interaksi yang sebelumnya terasa lambat karena page reload kini menjadi mulus dan instan. Pengguna bisa menambah, mengedit, dan menghapus produk sambil melihat perubahannya secara real-time di halaman. Ditambah dengan notifikasi visual (toast) untuk setiap aksi, aplikasi ini kini terasa lebih modern, efisien, dan jauh lebih menyenangkan untuk digunakan.
+
+---
+
+## Langkah Implementasi
+
+
+---

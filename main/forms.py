@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 from main.models import Product
+from django.utils.html import strip_tags
 
 class ProductForm(ModelForm):
     class Meta:
@@ -26,3 +27,11 @@ class ProductForm(ModelForm):
                 "class": "rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-blue-500"
             }),
         }
+
+        def clean_title(self):
+            title = self.cleaned_data["title"]
+            return strip_tags(title)
+
+        def clean_content(self):
+            content = self.cleaned_data["content"]
+            return strip_tags(content)
