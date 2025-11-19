@@ -37,3 +37,12 @@ class Product(models.Model):
         self.product_views += 1
         self.save()
         
+
+class Books(models.Model):
+    id  = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
+    title = models.CharField(max_length=255)
+
+class Author(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, unique=True)
+    books = models.ManyToManyField(Books)
+    bio = models.TextField()
